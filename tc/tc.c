@@ -48,6 +48,7 @@ static struct filter_util * filter_list;
 extern struct qdisc_util cbq_qdisc_util;
 extern struct qdisc_util htb_qdisc_util;
 extern struct qdisc_util sfq_qdisc_util;
+extern struct qdisc_util tbf_qdisc_util;
 extern struct qdisc_util ingress_qdisc_util;
 extern struct filter_util u32_filter_util;
 #endif
@@ -112,6 +113,8 @@ struct qdisc_util *get_qdisc_kind(const char *str)
 		return &htb_qdisc_util;
 	else if (!strcmp(str, "sfq"))
 		return &sfq_qdisc_util;
+	else if (!strcmp(str, "tbf"))
+		return &tbf_qdisc_util;
 	else if (!strcmp(str, "ingress"))
 		return &ingress_qdisc_util;
 	else {
